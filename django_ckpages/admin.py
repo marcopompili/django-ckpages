@@ -21,9 +21,9 @@ class CKPageAdmin(FlatPageAdmin):
     
     class Media:
         css = {
-            'all' : ('/static/ckpages/css/style.css',)
+            'all' : ('/static/django_ckpages/css/style.css',)
         }
-        js = ('/static/ckpages/ckeditor/ckeditor.js',
+        js = ('/static/django_ckpages/ckeditor/ckeditor.js',
               settings.CK_CONFIGURATION,)
 
 admin.site.unregister(FlatPage)
