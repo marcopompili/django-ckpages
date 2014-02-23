@@ -10,9 +10,9 @@ from django import forms
 
 from django.contrib import admin
 from django.contrib.flatpages.models import FlatPage
-from django.contrib.flatpages.admin import FlatPageAdmin
+#from django.contrib.flatpages.admin import FlatPageAdmin
 
-class CKPageAdmin(FlatPageAdmin):
+class CKPageAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {
             'widget' : forms.Textarea(attrs = { 'class' : 'ckeditor '})
