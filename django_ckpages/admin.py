@@ -23,7 +23,7 @@ class CKPageAdmin(admin.ModelAdmin):
         css = {
             'all' : ('/static/django_ckpages/css/style.css',)
         }
-        js = ('/static/django_ckpages/ckeditor/ckeditor.js',
+        js = ('http://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.3.2/ckeditor.js',
               settings.CK_CONFIGURATION,)
 
 admin.site.unregister(FlatPage)
