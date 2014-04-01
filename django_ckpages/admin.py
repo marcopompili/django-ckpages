@@ -10,10 +10,15 @@ from django import forms
 
 from django.contrib import admin
 from django.contrib.flatpages.models import FlatPage
-#from django.contrib.flatpages.admin import FlatPageAdmin
+
+
+CKEDITOR_VERSION = "4.3.2"
 
 
 class CKPageAdmin(admin.ModelAdmin):
+    """
+        Admin interface with CKEditor support.
+    """
     formfield_overrides = {
         models.TextField: {
             'widget': forms.Textarea(attrs={'class': 'ckeditor '})
@@ -24,7 +29,7 @@ class CKPageAdmin(admin.ModelAdmin):
         css = {
             'all': ('/static/django_ckpages/css/style.css',)
         }
-        js = ('http://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.3.2/ckeditor.js',
+        js = ('http://cdnjs.cloudflare.com/ajax/libs/ckeditor/' + CKEDITOR_VERSION + '/ckeditor.js',
               settings.CK_CONFIGURATION,)
 
 
