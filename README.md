@@ -1,38 +1,39 @@
 django-ckpages
 ==============
-
-FlatPages with CKEditor support for content editing.
-
+FlatPages with CKEditor support for content editing. This application substitute the Flatpages application, the
+administration page will be using the excellent CKEditor for editing the content of the web pages.
 
 Installation
 ------------
-Install this application with pip, being still in development you can clone the repository and install locally with this command:
-```bash
+Install this application with pip, being still in development you can clone the repository and install locally
+with this command:
+```
 pip install -e django-ckpages
 ```
 
 Configuration
 -------------
-CK_CONFIGURATION must be set into the settings file to make this app work, an example:
-
+Set django-ckpages in the installed applications AFTER flatpages:
 ```python
-# in settings.py
+INSTALLED_APP = (
+    [...],
+    'django.contrib.flatpages',
+    'django_ckpages',
+    [...]
+)
+
 CK_CONFIGURATION = "/static/js/ckconf.js"
 ```
 
-and ckconf.js contains the CKEditor configuration, for example:
+The ckconf.js file can contains the CKEditor configuration, for example:
 
 ```javascript
 // Settings for CKEditor (refer to the CKEditor documentation)
-KEDITOR.config.bodyId = 'content'
-CKEDITOR.config.contentsCss = [ 
+CKEDITOR.config.contentsCss = [
 	'/static/css/content.css',
 	'/static/css/typo.css' 
 ]
 ```
-
-At this point you should be set.
-
 
 Administration
 --------------
@@ -46,4 +47,4 @@ class PageAdmin(CKPageAdmin):
     )
 ```
 
-At this point in the administration you should see the CKEditor used for textarea fields.
+At this point in the administration you should see the CKEditor used for text-area fields.
