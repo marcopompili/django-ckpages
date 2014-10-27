@@ -1,8 +1,8 @@
 /**
  * 	Admin style sheet
  */
-.field-content label {
+.field-content label, .form-row label {
     float: none;
-    color: transparent;
+    /*color: transparent;*/
     font-weight: bold !important
 }
