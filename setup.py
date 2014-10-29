@@ -14,7 +14,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='django-ckpages',
     version='0.1',
-    packages=['django_ckpages'],
+    packages=['django_ckpages', 'django_ckpages.templatetags'],
     include_package_data=True,
     license='BSD-3 License',
     description='FlatPages with CKEditor support for content editing.',
